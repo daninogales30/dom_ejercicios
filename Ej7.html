@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ej7</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ej7</title>
 </head>
+
 <body>
   <p>
     <label for="valor1">Ingrese primer valor:</label>
@@ -25,7 +27,29 @@
     <input type="button" value="Operar" id="calculo" />
   </p>
   <p id="resultado"></p>
-  
+
+  <script>
+    document.getElementById("calculo").addEventListener("click", function () {
+      let n1 = document.getElementById("valor1").valueAsNumber;
+      let n2 = document.getElementById("valor2").valueAsNumber;
+      let p = document.getElementById("resultado");
+      let sumar = document.getElementById("suma");
+      let resta = document.getElementById("resta");
+
+      if (sumar.checked && resta.checked) {
+        p.textContent = "La suma es " + (n1 + n2) + " - La diferencia es de " + (n1 - n2) + ".";
+      }
+
+      if (sumar.checked && !resta.checked) {
+        p.textContent = "La suma es " + (n1 + n2) + ".";
+      }
+
+      if (resta.checked && !sumar.checked) {
+        p.textContent = "La diferencia es de " + (n1 - n2) + ".";
+      }
+    });
+  </script>
+
 </body>
 
 </html>

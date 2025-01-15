@@ -36,5 +36,38 @@
         <input id="compara" type="button" value="<< Comparar >>" onclick="compara()" />
         
         <div id="resultado"></div>
+
+        <script>
+            let cuadrito1 = document.getElementById("primero");
+            let cuadrito2 = document.getElementById("segundo");
+            let cuadrito3 = document.getElementById("resultado");
+            let parrafo1 = document.createElement("p")
+            parrafo1.setAttribute("id", "p1")
+            let parrafo2 = document.createElement("p")
+            parrafo2.setAttribute("id", "p2")
+
+            function genera(){
+                let numeroaleatorio1 = Math.floor(Math.random() * (10 - 1) + 1);
+                let numeroaleatorio2 = Math.floor(Math.random() * (10 - 1) + 1);
+                parrafo1.textContent = numeroaleatorio1;
+                parrafo2.textContent = numeroaleatorio2;
+                
+                cuadrito1.innerHTML = "";
+                cuadrito2.innerHTML = "";
+                cuadrito1.appendChild(parrafo1);
+                cuadrito2.appendChild(parrafo2);
+            }
+
+            function compara(){
+                let valorP1 = parseInt(parrafo1.textContent);
+                let valorP2 = parseInt(parrafo2.textContent);
+
+                if(valorP1 > valorP2){
+                    cuadrito3.appendChild(parrafo1);
+                    return
+                }
+                cuadrito3.appendChild(parrafo2);
+            }
+        </script>
 </body>
 </html>

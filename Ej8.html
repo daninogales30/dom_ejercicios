@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Ej8</title>
-</head>      
+    <title>Ej8</title>
+</head>
+
 <body>
     <p>
         <label for="valor1">Ingrese primer valor:</label>
@@ -17,8 +19,8 @@
     </p>
     <p>
         <select id="operacion">
-        <option value="suma">Sumar</option>
-        <option value="resta">Restar</option>
+            <option value="suma">Sumar</option>
+            <option value="resta">Restar</option>
         </select>
     </p>
     <p>
@@ -33,6 +35,32 @@
         <input type="button" value="Operar" id="calculomultiple" />
     </p>
     <p id="resultado2"></p>
+
+    <script>
+        document.getElementById("calculo").addEventListener("click", function () {
+            let n1 = document.getElementById("valor1").valueAsNumber;
+            let n2 = document.getElementById("valor2").valueAsNumber;
+            let p = document.getElementById("resultado1");
+            let operacion = document.getElementById("operacion").value;
+
+            if(operacion === "suma"){
+                p.textContent = "La suma es " + (n1 + n2) + ".";
+            }
+
+            if(operacion === "resta"){
+                p.textContent = "La diferencia es de " + (n1 - n2) + ".";
+            }
+        });
+
+        document.getElementById("calculomultiple").addEventListener("click", function(){
+            let n1 = document.getElementById("valor1").valueAsNumber;
+            let n2 = document.getElementById("valor2").valueAsNumber;
+            let p = document.getElementById("resultado2");
+            let operacion = document.getElementById("operaciones").value;
+
+            console.log(operacion)
+        });
+    </script>
 </body>
 
 </html>

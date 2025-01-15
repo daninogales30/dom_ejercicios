@@ -12,7 +12,36 @@
         <p>Donec sagittis, nibh nec ullamcorper tristique, <span class="importante">pede velit feugiat massa</span>, at sollicitudin justo tellus vitae justo. Vestibulum aliquet, nulla sit amet imperdiet suscipit, nunc erat laoreet est, a <a href="http://prueba">aliquam leo odio sed sem</a>. Quisque eget eros vehicula diam euismod tristique. Ut dui. Donec in metus sed risus laoreet sollicitudin. Proin et nisi non arcu sodales hendrerit. In sem. Cras id augue eu lorem dictum interdum. Donec pretium. Proin <a href="http://prueba4">egestas</a> adipiscing ligula. Duis iaculis laoreet turpis. Mauris mollis est sit amet diam. Curabitur hendrerit, eros quis malesuada tristique, ipsum odio euismod tortor, a vestibulum nisl mi at odio. <a class="importante" href="http://prueba5">Sed non lectus non est pellentesque</a> auctor.</p>
 
         <script type="text/javascript">
+            // Apartado 2
+            let parrafos = document.getElementsByTagName("p");
+            for(parrafo of parrafos){
+                let clase = parrafo.getAttribute("class");
 
+                if(clase === "importante"){
+                    parrafo.setAttribute("class", "resaltado")
+                } else{
+                    parrafo.setAttribute("class", "normal")
+                }
+            }
+            // Apartado 1 y 3
+            let enlaces = document.getElementsByTagName("a")
+            let contador = 0;
+            for(enlace of enlaces){
+                let direccion = enlace.getAttribute("href");
+                let clase = enlace.getAttribute("class");
+                
+
+                if(clase === "importante"){
+                    enlace.setAttribute("name", "importante"+contador)
+                    contador++;
+                }
+
+                if(direccion.startsWith("http://")){
+                    let nuevaDireccion = direccion.replace("http://", "https://")
+                    enlace.setAttribute("href", nuevaDireccion)
+                }
+                
+            }
         </script>
     </body>
 </html>

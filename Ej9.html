@@ -17,6 +17,16 @@
       <span>Caracteres posibles:</span>
       <span id="resultado">50</span>
     </p>
+
+    <script>
+      let comentarios = document.getElementById("comentarios");
+      let resultado = document.getElementById("resultado");
+
+      comentarios.addEventListener("input", function(){
+        let caracteresRestantes = comentarios.maxLength - comentarios.value.length;
+        resultado.textContent = caracteresRestantes;
+      });
+    </script>
   </body>
   
   </html>
