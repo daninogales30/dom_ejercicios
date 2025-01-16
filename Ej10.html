@@ -26,14 +26,27 @@
     <script>
       function validar(form, event){
         event.preventDefault();
-        let email = form.email.value;
-        let sitioWeb = form.url.value;
+        let email = document.getElementById("email").value;
+        let sitioWeb = document.getElementById("url").value;
         let resultado1 = document.getElementById("resultado1");
         let resultado2 = document.getElementById("resultado2");
 
-        if(email.validity)
+        if(email.validity.valid){
+          resultado1.textContent = "Correcto";
+          resultado1.style.color = "green";
+        } else {
+          resultado1.textContent = "Inválido";
+          resultado1.style.color = "red";
+        }
 
-        console.log(email+" "+sitioWeb)
+        if(sitioWeb.validity.valid){
+          resultado2.textContent = "Correcto";
+          resultado2.style.color = "green";
+        } else {
+          resultado2.textContent = "Inválido";
+          resultado2.style.color = "red";
+        }
+        
       }
     </script>
 </body>

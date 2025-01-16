@@ -43,22 +43,35 @@
             let p = document.getElementById("resultado1");
             let operacion = document.getElementById("operacion").value;
 
-            if(operacion === "suma"){
+            if (operacion === "suma") {
                 p.textContent = "La suma es " + (n1 + n2) + ".";
             }
 
-            if(operacion === "resta"){
+            if (operacion === "resta") {
                 p.textContent = "La diferencia es de " + (n1 - n2) + ".";
             }
         });
 
-        document.getElementById("calculomultiple").addEventListener("click", function(){
+        document.getElementById("calculomultiple").addEventListener("click", function () {
             let n1 = document.getElementById("valor1").valueAsNumber;
             let n2 = document.getElementById("valor2").valueAsNumber;
             let p = document.getElementById("resultado2");
-            let operacion = document.getElementById("operaciones").value;
+            let operaciones = document.getElementById("operaciones");
+            let resultado = "";
 
-            console.log(operacion)
+            for (let i = 0; i < operaciones.options.length; i++) {
+                let option = operaciones.options[i];
+                if (option.selected) {
+                    if (option.value === "suma") {
+                        resultado += "La suma es " + (n1 + n2) + ".";
+                    } else if (option.value === "resta") {
+                        resultado += "La diferencia es de " + (n1 - n2) + ".";;
+                    }
+                }
+            }
+
+            p.textContent = resultado;
+
         });
     </script>
 </body>

@@ -37,11 +37,10 @@
 
 		//inserta un párrafo de color rojo entre el tercer y el cuarto párrafos
 		let nuevoParrafo = document.createElement("p");
-		nuevoParrafo.textContent = "Nuevo párrafo";
+		nuevoParrafo.textContent = "Nuevo parrafo";
 		nuevoParrafo.style.color = "red";
-		let cuartoParrafo = parrafos[3];
-		document.body.insertBefore(nuevoParrafo, cuartoParrafo);
-
+		let cuartoParrafo = parrafos[parrafos.length - 2]
+		document.body.insertBefore(nuevoParrafo, cuartoParrafo)
 
 		//elimina el segundo párrafo [1]	
 		let segundoParrafo = parrafos[1];

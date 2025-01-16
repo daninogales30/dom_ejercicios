@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej14</title>
+</head>
+<body>
+    <p id="1">Primero</p>
+    <p id="2">Segundo</p>
+    <p id="3">Tercero</p>
+
+    <button type="button" id="mostrar">Mostrar</button>
+
+    <script>
+        let parrafo1 = document.getElementById("1");
+        let parrafo2 = document.getElementById("2");
+        let parrafo3 = document.getElementById("3");
+        let mostrar = document.getElementById("mostrar")
+
+        parrafo1.addEventListener("click", function(){
+            setTimeout(function(){
+                parrafo1.style.display = "none";
+            }, 400)
+        });
+
+        parrafo1.addEventListener("dblclick", function(){
+            parrafo1.remove();
+        });
+
+        parrafo2.addEventListener("click", function(){
+            setTimeout(function(){
+                parrafo2.style.display = "none";
+            }, 400)
+        });
+
+        parrafo2.addEventListener("dblclick", function(){
+            parrafo2.remove();
+        });
+
+        parrafo3.addEventListener("click", function(){
+            setTimeout(function(){
+                parrafo3.style.display = "none";
+            }, 400)
+        });
+
+        parrafo3.addEventListener("dblclick", function(){
+            parrafo3.remove();
+        });
+
+        mostrar.addEventListener("click", function(){
+            parrafo1.style.display = "block";
+            parrafo2.style.display = "block";
+            parrafo3.style.display = "block";
+        });
+
+
+    </script>
+</body>
+</html>

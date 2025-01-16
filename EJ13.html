@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ej13</title>
+</head>
+<body>
+    <div id="caja"></div><br><br>
+
+    <button type="button" id="marcar">Marcar todos</button>
+    <button type="button" id="desmarcar">Desmarcar todos</button>
+
+    <script>
+        let container = document.getElementById("caja");
+        let contador = 0;
+        let marcar = document.getElementById("marcar");
+        let desmarcar = document.getElementById("desmarcar");
+
+        for(let i=0;i<100;i++){
+            let checkbox = document.createElement("input");
+            checkbox.setAttribute("type", "checkbox");
+            checkbox.setAttribute("name", "checkbox"+contador);
+            checkbox.setAttribute("id", "checkbox"+contador);
+            container.appendChild(checkbox);
+            contador++;
+        }
+
+        marcar.addEventListener("click", function(){
+            let checkboxs = container.getElementsByTagName("input");
+            for(let checkbox of checkboxs){
+                if(!checkbox.checked){
+                    checkbox.checked = true;
+                }
+            }
+        });
+
+
+        desmarcar.addEventListener("click", function(){
+            let checkboxs = container.getElementsByTagName("input");
+            for(let checkbox of checkboxs){
+                if(checkbox){
+                    checkbox.checked = false;
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>
