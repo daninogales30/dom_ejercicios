@@ -7,7 +7,7 @@
 	<title>Ej10</title>
 </head>      
 <body>
-    <form action="#" method="post" id="formulario" onsubmit="return validar(this,event)">
+    <form action="#" method="post" id="formulario">
       <p>
         <label for="usuario">Ingrese email:</label>
         <input type="email" id="email" />
@@ -19,34 +19,37 @@
         <span id="resultado2"></span>
       </p>
       <p>
-        <input type="submit" value="confirmar" id="confirmar" />
+        <input type="submit" value="confirmar" id="confirmar" onclick="validar()"/>
       </p>
     </form>
     
     <script>
-      function validar(form, event){
+      function validar(){
         event.preventDefault();
         let email = document.getElementById("email").value;
         let sitioWeb = document.getElementById("url").value;
+        let expregEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        let expregWeb = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}([\/?#].*)?$/;
         let resultado1 = document.getElementById("resultado1");
         let resultado2 = document.getElementById("resultado2");
 
-        if(email.validity.valid){
-          resultado1.textContent = "Correcto";
-          resultado1.style.color = "green";
+        if(!expregEmail.test(email)){
+          resultado1.textContent = "Incorrecto"
         } else {
-          resultado1.textContent = "Inválido";
-          resultado1.style.color = "red";
+          resultado1.textContent = "Correcto";
         }
 
-        if(sitioWeb.validity.valid){
-          resultado2.textContent = "Correcto";
-          resultado2.style.color = "green";
+        if(!expregWeb.test(sitioWeb)){
+          resultado2.textContent = "Incorrecto";
         } else {
-          resultado2.textContent = "Inválido";
-          resultado2.style.color = "red";
+          resultado2.textContent = "Correcto"
         }
         
+        if(resultado1 === "Incorrecto" || resultado2 === "Incorrecto"){
+          return false;
+        }
+
+        return true;
       }
     </script>
 </body>
