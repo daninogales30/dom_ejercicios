@@ -29,7 +29,8 @@
   <p id="resultado"></p>
 
   <script>
-    document.getElementById("calculo").addEventListener("click", function () {
+    let boton = document.getElementById("calculo")
+    boton.addEventListener("click", function () {
       let n1 = document.getElementById("valor1").valueAsNumber;
       let n2 = document.getElementById("valor2").valueAsNumber;
       let p = document.getElementById("resultado");
@@ -45,6 +46,10 @@
       }
 
       if (resta.checked && !sumar.checked) {
+        p.textContent = "La diferencia es de " + (n1 - n2) + ".";
+      }
+
+      if (!resta.checked && !sumar.checked) {
         p.textContent = "La diferencia es de " + (n1 - n2) + ".";
       }
     });

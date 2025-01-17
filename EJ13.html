@@ -8,6 +8,7 @@
 <body>
     <div id="caja"></div><br><br>
 
+
     <button type="button" id="marcar">Marcar todos</button>
     <button type="button" id="desmarcar">Desmarcar todos</button>
 
@@ -18,11 +19,16 @@
         let desmarcar = document.getElementById("desmarcar");
 
         for(let i=0;i<100;i++){
+            let numeroAleatorio = Math.floor(Math.random() * (100-1) +1);
             let checkbox = document.createElement("input");
             checkbox.setAttribute("type", "checkbox");
             checkbox.setAttribute("name", "checkbox"+contador);
             checkbox.setAttribute("id", "checkbox"+contador);
+            let label = document.createElement("label");
+            label.textContent = numeroAleatorio;
+            label.setAttribute("for", "checkbox"+contador);            
             container.appendChild(checkbox);
+            container.appendChild(label);
             contador++;
         }
 

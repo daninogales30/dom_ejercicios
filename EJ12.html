@@ -38,10 +38,10 @@
                     divisores++;
                 }
             }
-            if(divisores>1 || divisores == 0){
+            if(divisores>3){
                 return false;
             }
-            return true;
+            return divisores === 3;
         }
 
         boton.addEventListener("click", function(){
