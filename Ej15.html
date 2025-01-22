@@ -30,7 +30,6 @@
                 let direccion = enlace.getAttribute("href");
                 let clase = enlace.getAttribute("class");
                 
-
                 if(clase === "importante"){
                     enlace.setAttribute("name", "importante"+contador)
                     contador++;
@@ -40,8 +39,7 @@
                     let nuevaDireccion = direccion.replace("http://", "https://")
                     enlace.setAttribute("href", nuevaDireccion)
                 }
-                
-            }
+                }
         </script>
     </body>
 </html>
